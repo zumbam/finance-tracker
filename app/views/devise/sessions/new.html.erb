@@ -15,21 +15,20 @@
         </div>
 
         <% if devise_mapping.rememberable? %>
-          <div class="field control">
-            <%= f.check_box :remember_me, class: 'check_box' %>
-            <%= f.label :remember_me, class: 'check_box' do %>
-              <%= resource.class.human_attribute_name('remember_me') %>
-            <% end %>
+          <div class="field">
+            <div class="control">
+              <%= f.check_box :remember_me, class: 'check_box' %>
+              <%= f.label :remember_me, class: 'check_box' do %>
+                <%= resource.class.human_attribute_name('remember_me') %>
+              <% end %>
+            </div>
           </div>
         <% end %>
 
         <div class="field">
           <%= f.submit  t('.sign_in'), class: 'button is-success is-fullwidth' %>
         </div>
-
-        <buttons class="buttons is-vertically is-centered">
           <%= render 'devise/shared/links' %>
-        </buttons>
       <% end %>
 
     </div>
