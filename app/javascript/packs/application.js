@@ -32,4 +32,10 @@ $( document ).on('turbolinks:load', function() {
 
   });
 
+  $("button.delete").click(function(){
+    console.log("delete");
+    $(this).off();
+    $(this).parent().remove();
+  })
+
 });

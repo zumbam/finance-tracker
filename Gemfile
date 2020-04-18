@@ -23,7 +23,7 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise-i18n'
-gem 'devise-bootstrap-views'
+# gem 'devise-bootstrap-views'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

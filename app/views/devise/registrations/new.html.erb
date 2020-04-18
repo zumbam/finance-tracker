@@ -1,0 +1,33 @@
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+
+<%= render "devise/shared/head" %>
+<div class="hero-body">
+  <div class="container is-desktop">
+  <h1 class="title"><%= t('.sign_up') %></h1>
+  <div class="field">
+    <%= f.label :email, class: "label" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'input' %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password, class: "label"  %>
+    <%= f.password_field :password, autocomplete: 'current-password', class: 'input' %>
+
+    <% if @minimum_password_length %>
+      <small class="help"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
+    <% end %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'input' %>
+  </div>
+
+  <div class="field">
+    <%= f.submit t('.sign_up'), class: 'button is-success is-fullwidth' %>
+  </div>
+    <%= render 'devise/shared/links' %>
+
+  </div>
+</div>
+<% end %>
