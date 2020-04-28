@@ -23,7 +23,12 @@ gem 'jbuilder', '~> 2.7'
 
 gem 'devise', '~> 4.7', '>= 4.7.1'
 gem 'devise-i18n'
+# this can be excluded but was used!
 # gem 'devise-bootstrap-views'
+
+gem 'iex-ruby-client'
+
+
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
