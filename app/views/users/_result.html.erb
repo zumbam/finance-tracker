@@ -1,0 +1,17 @@
+
+<div class="stock_inline">
+  <%= bulma_divise_flash_messages! %>
+</div>
+
+<% unless @stock.nil? %>
+  <div class="card">
+    <div class="card-content">
+
+      <div class="stock_inline">
+      <strong>Ticker:</strong> <%=@stock.ticker%>
+      <strong>Cpmpany Name:</strong> <%=@stock.name%>
+      <strong>Last Price:</strong> <%=@stock.last_price%>
+      </div>
+    </div>
+  </div>
+<% end %>
