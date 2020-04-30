@@ -4,9 +4,11 @@
 <div class="hero-body">
   <div class="container is-desktop">
   <h1 class="title"><%= t('.sign_up') %></h1>
+
+  <%= render 'devise/shared/user_account_fields', form: f %>
   <div class="field">
     <%= f.label :email, class: "label" %>
-    <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'input' %>
+    <%= f.email_field :email, autocomplete: 'email', class: 'input' %>
   </div>
 
   <div class="field">
@@ -26,7 +28,7 @@
   <div class="field">
     <%= f.submit t('.sign_up'), class: 'button is-success is-fullwidth' %>
   </div>
-    <%= render 'devise/shared/links' %>
+  <%= render 'devise/shared/links' %>
 
   </div>
 </div>

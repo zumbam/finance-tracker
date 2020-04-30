@@ -20,4 +20,12 @@ class User < ApplicationRecord
   def can_track_stock?(ticker)
     !tracks_stock?(ticker) && !reached_limit?
   end
+
+  def fullname
+    if firstname.empty? || lastname.empty?
+      "Anonymous"
+    else
+      "#{firstname} #{lastname}"
+    end
+  end
 end

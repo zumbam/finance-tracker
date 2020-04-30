@@ -34,3 +34,10 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity
+
+# ignore the follwing folder (idears and not modified stuff)
+/test
+/app/assets/data
+/app/assets/images/icons8-aktien-100_FT.png
+/app/javascript/packs/test.js
+/app/helpers/users_helper.rb

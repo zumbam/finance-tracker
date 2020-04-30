@@ -1,7 +1,7 @@
-<div class="field">
+<!-- <div class="field"> -->
   <%- if controller_name != 'sessions' %>
     <div class="field">
-      <%= link_to t(".sign_in"), new_session_path(resource_name), class: "button is-link is-fullwidth" %><br />
+      <%= link_to t(".sign_in"), new_session_path(resource_name), class: "button is-link is-fullwidth" %>
     </div>
   <% end -%>
 
@@ -30,4 +30,4 @@
       <%= link_to t('.sign_in_with_provider', provider: OmniAuth::Utils.camelize(provider)), omniauth_authorize_path(resource_name, provider) %><br />
     <% end -%>
   <% end -%>
-</div>
+<!-- </div> -->

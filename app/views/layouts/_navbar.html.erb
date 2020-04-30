@@ -63,11 +63,26 @@
     </div>
   <% else %>
     <div class="navbar-end">
-      <div class="navbar-item">
-        <%= link_to destroy_user_session_path, class: 'button is-primary is-normal is-fullwidth', method: :delete do %>
-          <strong>Log out</strong>
-        <% end %>
-      </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          <i class="fas fa-user mr05"></i>
+          <p>
+            <%= current_user.fullname %>
+          </p>
+        </a>
+
+        <div class="navbar-dropdown">
+          <%= link_to edit_user_registration_path, class: "navbar-item" do %>
+            Settings
+          <% end %>
+          <div class="navbar-item">
+            <%= link_to destroy_user_session_path, class: 'button is-primary is-normal is-fullwidth', method: :delete do %>
+              <strong>Log out</strong>
+            <% end %>
+          </div>
+
+        </div>
+
     </div>
   <% end %>
 </nav>
