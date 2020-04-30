@@ -17,10 +17,9 @@
   <div id="navbarBasicExample" class="navbar-menu has-text-centered">
     <div class="navbar-start">
 
-      <a class="navbar-item">
-        Home
-      </a>
-
+      <%= link_to my_portfolio_path, class: "navbar-item #{request.path==my_portfolio_path ? "is-active" : ""}" do %>
+        My Portfolio
+      <% end %>
       <a class="navbar-item">
         About
       </a>

@@ -1,3 +1,9 @@
+<div class="hero-head">
+  <%= bulma_divise_flash_messages! %>
+</div>
+
+
+
 <div class='hero-body'>
   <div class='container is-desktop'>
     <h1 class='title'> My Portfolio </h1>
@@ -14,9 +20,11 @@
       </div>
     <% end %>
 
-    <div id="result">
+    <div id="result" class="mb">
 
     </div>
-  </div>
 
+    <%= render 'users/stock_table' %>
+
+  </div>
 </div>

@@ -6,11 +6,40 @@
 <% unless @stock.nil? %>
   <div class="card">
     <div class="card-content">
+      <div class="level">
+        <div class="level-item has-text-centered">
+          <strong>Ticker:</strong>&nbsp;<%="#{@stock.ticker}"%>
+        </div>
+        <div class="level-item has-text-centered">
+          <strong>Cpmpany Name:</strong>&nbsp;<%="  #{@stock.name}"%>
 
-      <div class="stock_inline">
-      <strong>Ticker:</strong> <%=@stock.ticker%>
-      <strong>Cpmpany Name:</strong> <%=@stock.name%>
-      <strong>Last Price:</strong> <%=@stock.last_price%>
+        </div>
+        <div class="level-item has-text-centered">
+          <strong>Last Price:</strong>&nbsp;<%="  #{@stock.last_price}"%>
+        </div>
+        <% if current_user.can_track_stock?(@stock.ticker) %>
+        <div class="level-item has-text-centered">
+            <%= link_to user_stocks_path(user: current_user, ticker: @stock.ticker),
+                                       class: "button is-primary", method: :post do %>
+                                       Add to Portfolio
+            <% end %>
+        </div>
+        <% else %>
+            <div class="level-item has-text-centered">
+              <div class="tags">
+              <% if current_user.reached_limit? %>
+                <span class="tag is-danger is-large">
+                    Limit of 10 Stocks
+                </span>
+              <% end %>
+              <% if current_user.tracks_stock?(@stock.ticker) %>
+                <span class="tag is-info is-large">
+                    Tracked
+                </span>
+              <% end %>
+              </div>
+            </div>
+        <% end %>
       </div>
     </div>
   </div>
