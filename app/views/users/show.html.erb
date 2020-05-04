@@ -1,0 +1,10 @@
+<div class="hero-head">
+  <%= bulma_divise_flash_messages! %>
+</div>
+
+<div class='hero-body'>
+  <div class='container is-desktop'>
+    <h1 class='title'> <%= "#{@user.fullname}´s"%> Portfolio </h1>
+    <%= render 'users/stock_table', stocks: @user.stocks %>
+  </div>
+</div>

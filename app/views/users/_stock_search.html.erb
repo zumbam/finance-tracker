@@ -1,0 +1,12 @@
+<%= form_tag 'search_stock', remote: true, method: :get do %>
+  <div class='field has-addons has-addons-centered'>
+    <div class='control is-expanded'>
+      <%= text_field_tag :stock, params[:stock], placeholder: 'Stock ticker', class: 'input' %>
+    </div>
+    <div class='control'>
+      <%= button_tag type: :submit, class: 'button is-success' do %>
+        <i class="fas fa-search"></i>
+      <% end %>
+    </div>
+  </div>
+<% end %>

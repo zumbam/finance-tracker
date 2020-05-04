@@ -1,0 +1,37 @@
+<div class="stock_inline">
+  <%= bulma_divise_flash_messages! %>
+</div>
+
+<% unless @user_hits.nil? %>
+  <% @user_hits.each do |user| %>
+  <div class="card">
+    <div class="card-content">
+      <div class="columns">
+        <div class="column">
+          <strong>Firstname:</strong>&nbsp;<%="#{user.firstname}"%>
+        </div>
+        <div class="column">
+          <strong>Lastname:</strong>&nbsp;<%="  #{user.lastname}"%>
+
+        </div>
+        <div class="column">
+          <strong>Email:</strong>&nbsp;<%="  #{user.email}"%>
+        </div>
+        <div class="column">
+            <%= link_to user_path(user),
+                                       class: "button is-info" do %>
+                                       <i class="fas fa-user"></i>
+            <% end %>
+        </div>
+        <div class="column">
+            <%= link_to friendships_path(friend_id: user),
+                                     class: "button is-primary", method: :post do %>
+                                     <i class="fas fa-user-plus"></i>
+            <% end %>
+        </div>
+
+      </div>
+    </div>
+  </div>
+  <% end %>
+<% end %>

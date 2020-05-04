@@ -1,0 +1,57 @@
+<div class="hero-head">
+  <%= bulma_divise_flash_messages! %>
+</div>
+
+<div class="hero-body">
+    <div class='container is-desktop'>
+      <h1 class="title">Friends</h1>
+
+      <%= form_tag 'search_friends', remote: true, method: :get do %>
+        <div class='field has-addons has-addons-centered'>
+          <div class='control is-expanded'>
+            <%= text_field_tag :friend_search_input, params[:friend_search_input] , placeholder: 'search for a friend', class: 'input' %>
+          </div>
+          <div class='control'>
+            <%= button_tag type: :submit, class: 'button is-success' do %>
+              <i class="fas fa-search"></i>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+      <div id="friend_search_result" class="mb">
+
+      </div>
+
+
+<% unless @friends.empty? %>
+<table class="table is-hoverable is-fullwidth">
+  <thead>
+    <tr>
+      <th>Fullname</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @friends.each do |friend|%>
+      <tr>
+        <td><%= friend.fullname %></td>
+        <td><%= friend.email %> </td>
+        <td>
+        <%= link_to user_path(friend),class: "button is-info" do %>
+                                   <i class="fas fa-user"></i>
+        <% end %>
+        </td>
+        <td>
+          <%= link_to friendship_path(id: friend), method: :delete, class: "button is-warning",
+                      data: {confirm: "Do you really want to delete \"#{friend.fullname}\" from you friends"} do %>
+            <i class="fas fa-user-minus"></i>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>
+</div>
+</div>
