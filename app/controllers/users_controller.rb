@@ -2,7 +2,7 @@ class UsersController < ApplicationController
 
   MAX_NUMBER_OF_REULTS = 10
 
-  before_action :authenticate_user!, only: [:my_portfolio]
+  before_action :authenticate_user!
 
   def my_portfolio
     @stocks = current_user.stocks
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params['id'])
+    @user = User.find(params[:id])
   end
 
   def search_friends
